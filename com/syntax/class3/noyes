@@ -1,0 +1,58 @@
+Why do we need Xpath and Css Selector?
+    Developers may not provide all the locators in HTML
+    By using xpath and css we can identify elements with any given attributes
+
+What is an Xpath?
+    Is a query language which helps us to identify elements uniquely on the web page
+
+Types of Xpath:
+    Absolute Xpath --> starts from the starting node of the html
+                       it always starts with single slash (/)
+                       search /html/body/div/div/div
+
+    Relative Xpath --> starts from any node in html
+                       it always starts with double slash (//)
+
+Syntax for relative xpath:
+    //tagname[@attribute = 'attribute value'] // we need @ only for attributes
+    //input[@id = 'email']
+
+Identifying elements by its text:
+    //tagname[text() = 'text value']
+    //a[text() = 'Create new account']
+    //h2[text() = 'Connect with friends and the world around you on Facebook.'] // for text fe don't use @
+
+Identifying elements by using contains method:
+    //tagname[contains(@attribute, 'partial attribute value')]
+    //input[contains(@placeholder,'Email')]
+    //h2[contains(text(),'the world')] - text
+
+starts-with will identify elements by its partial starting value
+//tagname[starts-with(@attributes,'partial starting attribute value')]
+//input[starts-with(@aria-label,'Email')]
+
+Advanced Xpath:
+    Is based on parent and child, sibling relationships
+
+Identifying by following siblings:
+//tagname[@attribute = 'attribute value']/following-sibling::tagname
+//input[@id='calFromDate']/following-sibling::img
+
+Identifying elements by preceding sibling:
+//tagname[@attribute = 'attribute value']/preceding-sibling::tagname
+//span[text() = '& Order')]/preceding-sibling::span
+
+Identifying elements by its parent:
+//tagname[@attribute = 'attribute value']/parent-sibling::parentTagname
+//span[text() = '& Order')]/parent::a
+
+Identifying elements by uts ancestors:
+//input[@id = 'email']/ancestor::form
+
+identifying elements by its index:
+(//img[@class = 'ui-datepicker-trigger'])[2]
+
+
+
+
+
